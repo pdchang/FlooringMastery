@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDCA231B-E051-4ED5-9E60-7EA395375E7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FM.BLL</RootNamespace>
+    <AssemblyName>FM.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OrderFactory.cs" />
+    <Compile Include="OrderManager.cs" />
+    <Compile Include="ProductFactory.cs" />
+    <Compile Include="ProductManager.cs" />
+    <Compile Include="TaxFactory.cs" />
+    <Compile Include="TaxManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FM.Data\FM.Data.csproj">
+      <Project>{9610A40D-4F9F-4336-A0D6-E442397B45DF}</Project>
+      <Name>FM.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FM.Models\FM.Models.csproj">
+      <Project>{BCA9A3C2-3362-4EF2-A2F8-058BA31D9177}</Project>
+      <Name>FM.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FM.Models\FM.Models.csproj">
+      <Project>{BCA9A3C2-3362-4EF2-A2F8-058BA31D9177}</Project>
+      <Name>FM.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

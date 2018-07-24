@@ -1,0 +1,65 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{417F9679-4D8D-479C-8912-BCD0541147D2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FM.UI</RootNamespace>
+    <AssemblyName>FM.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleIO.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Workflows\AddOrderWorkflow.cs" />
+    <Compile Include="Workflows\EditOrderWorkflow.cs" />
+    <Compile Include="Workflows\DisplayOrderWorkflow.cs" />
+    <Compile Include="Workflows\RemoveOrderWorkflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FM.BLL\FM.BLL.csproj">
+      <Project>{FDCA231B-E051-4ED5-9E60-7EA395375E7B}</Project>
+      <Name>FM.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FM.Models\FM.Models.csproj">
+      <Project>{BCA9A3C2-3362-4EF2-A2F8-058BA31D9177}</Project>
+      <Name>FM.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FM.Data\FM.Data.csproj">
+      <Project>{9610A40D-4F9F-4336-A0D6-E442397B45DF}</Project>
+      <Name>FM.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
